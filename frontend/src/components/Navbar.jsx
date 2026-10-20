@@ -14,30 +14,47 @@ export default function Navbar() {
     try {
       const token = await getAccessToken();
       await navigator.clipboard.writeText(token);
-      alert("Access token copied to clipboard. Do not share it.");
+      alert("Access token copied. Do not share it.");
     } catch {
-      alert("Could not get token. Please log in again.");
+      alert("Could not copy the token. Try logging in again.");
     }
   };
 
   return (
     <nav className="navbar">
       <span className="brand">Paper Trading</span>
+
       {user && (
         <>
           <NavLink to="/dashboard">Dashboard</NavLink>
           <NavLink to="/stocks">Stocks</NavLink>
           <NavLink to="/trade">Buy / Sell</NavLink>
           <NavLink to="/portfolio">Portfolio</NavLink>
-          <NavLink to="/transactions">Transactions</NavLink>
+          <NavLink to="/orders">Orders</NavLink>
         </>
       )}
+
       <span className="spacer" />
+
       {user ? (
         <>
-          <span>{user.email}</span>
-          <a href="#" onClick={(e) => { e.preventDefault(); handleCopyToken(); }}>Copy token</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); handleLogout(); }}>Logout</a>
+          <span className="nav-email">{user.email}</span>
+
+          <button
+            type="button"
+            className="nav-button"
+            onClick={handleCopyToken}
+          >
+            Copy token
+          </button>
+
+          <button
+            type="button"
+            className="nav-button"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
         </>
       ) : (
         <>

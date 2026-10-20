@@ -47,3 +47,90 @@ button.sell:hover { background: #b91c1c; }
 
 .notice { background: #fef9c3; border: 1px solid #fde047; padding: 10px 14px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; }
 .footer { text-align: center; color: #6b7280; font-size: 13px; padding: 16px; }
+
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.page-heading h2 {
+  margin: 0;
+}
+
+.page-heading button {
+  margin-top: 0;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.table-wrap table {
+  min-width: 580px;
+}
+
+.secondary {
+  background: #475569;
+}
+
+.secondary:hover {
+  background: #334155;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.navbar .nav-button {
+  margin: 0;
+  padding: 6px 8px;
+  background: transparent;
+  color: #cbd5e1;
+  border: 1px solid #475569;
+  font-size: 14px;
+}
+
+.navbar .nav-button:hover {
+  background: #1e293b;
+  color: white;
+}
+
+.nav-email {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.muted {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.form-box select:disabled,
+.form-box input:disabled {
+  background: #e2e8f0;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .navbar .brand {
+    width: 100%;
+  }
+
+  .navbar .spacer {
+    display: none;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
